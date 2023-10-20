@@ -3,6 +3,9 @@ package dao;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 物品
+ */
 public class WuPing {
     public int price;
     public int p;//重要度
