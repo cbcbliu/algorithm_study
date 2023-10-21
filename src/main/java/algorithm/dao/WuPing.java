@@ -1,4 +1,4 @@
-package dao;
+package algorithm.dao;
 
 import java.util.ArrayList;
 import java.util.List;

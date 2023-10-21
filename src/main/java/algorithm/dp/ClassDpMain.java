@@ -1,6 +1,6 @@
-package dp;
+package algorithm.dp;
 
-import dao.WuPing;
+import algorithm.dao.WuPing;
 
 import java.util.Scanner;
 

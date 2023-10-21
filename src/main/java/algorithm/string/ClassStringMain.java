@@ -1,11 +1,9 @@
-package string;
+package algorithm.string;
 
-import dao.WuPing;
-
-import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-import static sun.swing.MenuItemLayoutHelper.max;
 /**
  * 字符串相关的算法
  */
@@ -125,8 +123,27 @@ public class ClassStringMain {
     }
 
 
+    /**
+     * 合并表记录**
+     */
+    public static void algorithm5(){
+        Scanner in = new Scanner(System.in);
+        int num = in.nextInt();
+        Map<Integer,Integer> map = new HashMap<>();
+        for(int i = 0;i<num;i++){
+            int key = in.nextInt();
+            int value = in.nextInt();
+            if(map.containsKey(key)){
+                map.put(key,map.get(key)+value);
+            }else {
+                map.put(key,value);
+            }
+        }
+        for (int key : map.keySet()){
+            System.out.println(key+" "+map.get(key));
+        }
 
-
+    }
 
 
 }
