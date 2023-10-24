@@ -13,8 +13,27 @@ public class ClassStringMain {
 
     public static void main(String[] args) {
 
-        algorithm4();
+        algorithm6();
 
+    }
+
+
+    /**
+     * 校验字符串是否含有重复字串(*****必会)
+     * @param str
+     * @param l 类似数组下标指针（第一次调用时赋值0）
+     * @param r 最小重复字串的长度，也类似数组下标指针
+     * @return
+     */
+    public static boolean isRepeatString(String str,int l,int r){
+        if(r>= str.length()){
+            return false;
+        }
+        if(str.substring(r).contains(str.substring(l,r))){
+            return true;
+        }else{
+            return isRepeatString(str,l+1,r+1);//每次调用下标加一
+        }
     }
 
     /**
@@ -125,6 +144,7 @@ public class ClassStringMain {
 
     /**
      * 合并表记录**
+     * 合并相同key
      */
     public static void algorithm5(){
         Scanner in = new Scanner(System.in);
@@ -146,6 +166,33 @@ public class ClassStringMain {
     }
 
 
+    /**
+     * 蛇形矩阵
+     * 输入n：行数
+     */
+    public static void algorithm6(){
+        Scanner in = new Scanner(System.in);
+        int n = in.nextInt();
+        int[][] res = new int[n][];
+
+        int count = 1;
+        for(int i = 0;i<n;i++){
+            res[i] = new int[n-i]; //第i行有n-i个元素
+            for (int j = 0; j <i+1; j++) {
+                res[i-j][j] = count++;
+            }
+        }
+        for (int i = 0;i<n;i++){
+            for (int j = 0; j <n-i; j++) {
+                if(res[i][j] != 0){
+                    System.out.print(res[i][j]+" ");
+                }
+
+            }
+            System.out.println();
+        }
+
+    }
 }
 
 
